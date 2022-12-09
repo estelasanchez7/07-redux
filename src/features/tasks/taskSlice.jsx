@@ -20,9 +20,11 @@ export const taskSlice = createSlice({
     initialState,
     reducers:{
         addTask: (state,action) => {
-            console.log(state,action)
+            state.push(action.payload);
         }
     }
 })
+
+export const {addTask} = taskSlice.actions
 
 export default taskSlice.reducer
